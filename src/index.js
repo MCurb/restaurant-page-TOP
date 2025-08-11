@@ -1,2 +1,4 @@
 import "./styles.css"
-console.log("it works")
+
+import { createHomeContent } from "./home"
+
