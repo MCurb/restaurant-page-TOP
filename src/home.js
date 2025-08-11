@@ -1,17 +1,22 @@
 import headerImg from "./images/cuban-restaurant-min.jpg";
 
+
+export const navContainer = createNav().navContainer;
+
 export function createHomeContent() {
-  createHeaderContainer();
+  const body = document.querySelector("body");
 
-  createLeftLogo();
+  const header = createHeaderContainer();
 
-  createNav();
+  const mainLogo = createLeftLogo();
 
-  createTxtSection();
+  const headerTxt = createTxtSection();
 
-  createHeaderImg();
+  const imgContainer = createHeaderImg();
 
-  header.append(mainLogo, navContainer, headerTxt, imgContainer)
+  header.append(mainLogo, navContainer, headerTxt, imgContainer);
+
+  body.appendChild(header);
 }
 
 function createElem(elemType) {
@@ -29,25 +34,33 @@ function addElemClass(element, className) {
 function createHeaderContainer() {
   const header = createElem("div");
   addElemClass(header, "header");
+  return header;
 }
 
 function createLeftLogo() {
   const mainLogo = createElem("div");
   addElemClass(mainLogo, "left-logo");
   addElemText(mainLogo, "Restaurant Nm");
+
+  return mainLogo;
 }
 
 function createNav() {
   const homeBtn = createElem("button");
+  addElemClass(homeBtn, "home-btn")
   addElemText(homeBtn, "Home");
   const menuBtn = createElem("button");
+  addElemClass(menuBtn, "menu-btn")
   addElemText(menuBtn, "Menu");
   const contactBtn = createElem("button");
+  addElemClass(contactBtn, "contact-btn")
   addElemText(contactBtn, "Contact");
 
   const navContainer = createElem("div");
   addElemClass(navContainer, "right-btns");
   navContainer.append(homeBtn, menuBtn, contactBtn);
+
+  return {navContainer, homeBtn, menuBtn, contactBtn};
 }
 
 function createTxtSection() {
@@ -66,14 +79,19 @@ function createTxtSection() {
   const headerTxt = createElem("div");
   addElemClass(headerTxt, "header-text");
   headerTxt.append(heroTxt, para, aboutBtn);
+
+  return headerTxt;
 }
 
 function createHeaderImg() {
   const image = createElem("img");
   image.src = headerImg;
   image.alt = "Restaurant Image";
+  image.width = 400;
 
   const imgContainer = createElem("div");
   addElemClass(imgContainer, "header-image");
   imgContainer.appendChild(image);
+
+  return imgContainer;
 }
