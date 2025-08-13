@@ -1,6 +1,7 @@
 import "./styles.css";
 
 import { createHomeContent, navContainer } from "./home";
+import { createMenuContent } from "./menu";
 
 createHomeContent();
 
@@ -14,10 +15,14 @@ function cleanPage() {
 navContainer.addEventListener("click", handleBtnClick);
 
 function handleBtnClick(event) {
-    if(event.target.matches(".home-btn")) {
-        cleanPage()
-        createHomeContent();
-    } else if (event.target.matches(".menu-btn")) {
-        cleanPage()
-    }
+  if (event.target.matches(".home-btn")) {
+    cleanPage();
+    createHomeContent();
+  } else if (event.target.matches(".menu-btn")) {
+    cleanPage();
+    createMenuContent();
+  } else if (event.target.matches(".contact-btn")) {
+    cleanPage();
+    
+  }
 }

@@ -1,7 +1,7 @@
 import headerImg from "./images/cuban-restaurant-min.jpg";
 
 
-export const navContainer = createNav().navContainer;
+export const navContainer = createNav()
 
 export function createHomeContent() {
   const body = document.querySelector("body");
@@ -19,15 +19,15 @@ export function createHomeContent() {
   body.appendChild(header);
 }
 
-function createElem(elemType) {
+export function createElem(elemType) {
   return document.createElement(elemType);
 }
 
-function addElemText(element, text) {
+export function addElemText(element, text) {
   return (element.textContent = text);
 }
 
-function addElemClass(element, className) {
+export function addElemClass(element, className) {
   return element.classList.add(className);
 }
 
@@ -60,7 +60,7 @@ function createNav() {
   addElemClass(navContainer, "right-btns");
   navContainer.append(homeBtn, menuBtn, contactBtn);
 
-  return {navContainer, homeBtn, menuBtn, contactBtn};
+  return navContainer;
 }
 
 function createTxtSection() {
@@ -87,7 +87,7 @@ function createHeaderImg() {
   const image = createElem("img");
   image.src = headerImg;
   image.alt = "Restaurant Image";
-  image.width = 400;
+  image.width = 550;
 
   const imgContainer = createElem("div");
   addElemClass(imgContainer, "header-image");
