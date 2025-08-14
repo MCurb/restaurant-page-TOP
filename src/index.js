@@ -2,6 +2,7 @@ import "./styles.css";
 
 import { createHomeContent, navContainer } from "./home";
 import { createMenuContent } from "./menu";
+import { createContactContent } from "./contact";
 
 createHomeContent();
 
@@ -23,6 +24,6 @@ function handleBtnClick(event) {
     createMenuContent();
   } else if (event.target.matches(".contact-btn")) {
     cleanPage();
-    
+    createContactContent();
   }
 }

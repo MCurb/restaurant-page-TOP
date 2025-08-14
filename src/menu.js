@@ -42,7 +42,7 @@ function createContainer() {
 
 function createHeroText() {
   const heroText = createElem("h2");
-  addElemText(heroText, "Our Dishes")
+  addElemText(heroText, "Our Dishes");
   return heroText;
 }
 
