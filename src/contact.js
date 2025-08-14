@@ -17,7 +17,7 @@ function createCard() {
   const phone = createElem("p");
   addElemText(phone, "962-458-6589");
   const email = createElem("p");
-  addElemClass(email, "varadero@gmail.com");
+  addElemText(email, "varadero@gmail.com");
   const address = createElem("p");
   addElemText(address, "Calle 60 y 3ra ave,, Varadero, Cuba");
   const reserveNow = createElem("button");

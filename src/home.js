@@ -1,8 +1,8 @@
-import headerImg from "./images/cuban-restaurant-min.jpg";
-import tradicional from "./images/cocina_tradicional_cuba_1.jpg";
-import ropaVieja from "./images/ropa-vieja-2.jpeg";
-import congris from "./images/congris-atun.jpg";
-import sandwish from "./images/sandwish.jpeg";
+import headerImg from "./images/cuban-restaurant-min-min.jpg";
+import tradicional from "./images/cocina_tradicional_cuba_1-min.jpg";
+import ropaVieja from "./images/ropa-vieja-min.jpg";
+import congris from "./images/congris-atun-min.jpg";
+import sandwish from "./images/sandwish-min.jpeg";
 
 import { createDish } from "./menu";
 
@@ -22,12 +22,11 @@ export function createHomeContent() {
   header.append(mainLogo, navContainer, headerTxt, imgContainer);
 
   const recipes = [
-    createDish(tradicional, "another one"),
-    createDish(ropaVieja, "this is a great dish for sunday"),
-    createDish(congris, "this is a great dish for sunday"),
-    createDish(sandwish, "this is a great dish for sunday"),
+    createDish(tradicional, "A burst of flavor in every bite, crafted to satisfy your cravings"),
+    createDish(ropaVieja, "Fresh ingredients meet bold seasoning for an unforgettable taste"),
+    createDish(congris, "Comfort food with a gourmet twist you’ll keep coming back for"),
+    createDish(sandwish, "Perfectly balanced taste, made to please every palate."),
   ];
-
   const mainTxt = createMainHeader()
 
   const main = createMainContent();
@@ -89,12 +88,12 @@ function createNav() {
 
 function createTxtSection() {
   const heroTxt = createElem("h1");
-  addElemText(heroTxt, "This website is awesome");
+  addElemText(heroTxt, "Authentic Cuban Flavor");
 
   const para = createElem("p");
   addElemText(
     para,
-    "This website has some subtext that goes here under the main title. It's a smaller font and the color is lower contrast"
+    "Step into a place where the air is filled with the aroma of slow-cooked Cuban dishes, the sound of lively rhythms, and the warmth of true island hospitality."
   );
 
   const aboutBtn = createElem("button");

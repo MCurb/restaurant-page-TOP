@@ -179,7 +179,11 @@ button {
 button:hover {
   cursor: pointer;
   background-color: hsl(216, 5%, 46%);
-  transform: scale(1.02);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 .main-content .right-btns {
@@ -191,6 +195,15 @@ button:hover {
 .main-home > div {
   width: 232px;
   text-align: center;
+  will-change: transform;
+  transform-origin: center center;
+  transition: all 0.4s ease;
+}
+
+.main-content > div:hover,
+.main-home > div:hover {
+  transform: scale(1.04);
+  cursor: pointer;
 }
 
 .main-content img,
@@ -206,4 +219,24 @@ button:hover {
   margin-top: 5px;
   margin-bottom: 0;
   color: gray;
+}
+
+/* Contact Section */
+
+.contact-card-container {
+  display: grid;
+  gap: 8px;
+  padding: 50px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-family: "Edu NSW ACT Hand Cursive", cursive;
+  background-color: #1f2937;
+  color: white;
+  will-change: transform;
+  transform-origin: center center;
+  transition: all 0.5s ease;
+}
+
+.contact-card-container:hover {
+  transform: scale(1.06);
 }
