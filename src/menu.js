@@ -42,11 +42,11 @@ function createContainer() {
 
 function createHeroText() {
   const heroText = createElem("h2");
-  addElemText(heroText, "Our Dishes");
+  addElemText(heroText, "Our Menu");
   return heroText;
 }
 
-function createDish(imgUrl, recipe) {
+export function createDish(imgUrl, recipe) {
   const recipeImg = createElem("img");
   recipeImg.src = imgUrl;
   const recipeDescript = createElem("p");

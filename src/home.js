@@ -1,7 +1,12 @@
 import headerImg from "./images/cuban-restaurant-min.jpg";
+import tradicional from "./images/cocina_tradicional_cuba_1.jpg";
+import ropaVieja from "./images/ropa-vieja-2.jpeg";
+import congris from "./images/congris-atun.jpg";
+import sandwish from "./images/sandwish.jpeg";
 
+import { createDish } from "./menu";
 
-export const navContainer = createNav()
+export const navContainer = createNav();
 
 export function createHomeContent() {
   const body = document.querySelector("body");
@@ -16,7 +21,24 @@ export function createHomeContent() {
 
   header.append(mainLogo, navContainer, headerTxt, imgContainer);
 
-  body.appendChild(header);
+  const recipes = [
+    createDish(tradicional, "another one"),
+    createDish(ropaVieja, "this is a great dish for sunday"),
+    createDish(congris, "this is a great dish for sunday"),
+    createDish(sandwish, "this is a great dish for sunday"),
+  ];
+
+  const mainTxt = createMainHeader()
+
+  const main = createMainContent();
+
+  main.appendChild(mainTxt)
+
+  recipes.forEach((recipe) => {
+    main.appendChild(recipe);
+  });
+
+  body.append(header, main);
 }
 
 export function createElem(elemType) {
@@ -31,6 +53,8 @@ export function addElemClass(element, className) {
   return element.classList.add(className);
 }
 
+
+
 function createHeaderContainer() {
   const header = createElem("div");
   addElemClass(header, "header");
@@ -40,20 +64,20 @@ function createHeaderContainer() {
 function createLeftLogo() {
   const mainLogo = createElem("div");
   addElemClass(mainLogo, "left-logo");
-  addElemText(mainLogo, "Restaurant Nm");
+  addElemText(mainLogo, "Patria y Vida");
 
   return mainLogo;
 }
 
 function createNav() {
   const homeBtn = createElem("button");
-  addElemClass(homeBtn, "home-btn")
+  addElemClass(homeBtn, "home-btn");
   addElemText(homeBtn, "Home");
   const menuBtn = createElem("button");
-  addElemClass(menuBtn, "menu-btn")
+  addElemClass(menuBtn, "menu-btn");
   addElemText(menuBtn, "Menu");
   const contactBtn = createElem("button");
-  addElemClass(contactBtn, "contact-btn")
+  addElemClass(contactBtn, "contact-btn");
   addElemText(contactBtn, "Contact");
 
   const navContainer = createElem("div");
@@ -94,4 +118,16 @@ function createHeaderImg() {
   imgContainer.appendChild(image);
 
   return imgContainer;
+}
+
+function createMainContent() {
+  const main = createElem("div");
+  addElemClass(main, "main-home")
+  return main;
+}
+
+function createMainHeader() {
+  const mainTxt = createElem("h2");
+  addElemText(mainTxt, "Main Dishes")
+  return mainTxt;
 }
