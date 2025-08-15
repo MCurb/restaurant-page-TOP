@@ -22,16 +22,28 @@ export function createHomeContent() {
   header.append(mainLogo, navContainer, headerTxt, imgContainer);
 
   const recipes = [
-    createDish(tradicional, "A burst of flavor in every bite, crafted to satisfy your cravings"),
-    createDish(ropaVieja, "Fresh ingredients meet bold seasoning for an unforgettable taste"),
-    createDish(congris, "Comfort food with a gourmet twist you’ll keep coming back for"),
-    createDish(sandwish, "Perfectly balanced taste, made to please every palate."),
+    createDish(
+      tradicional,
+      "A burst of flavor in every bite, crafted to satisfy your cravings"
+    ),
+    createDish(
+      ropaVieja,
+      "Fresh ingredients meet bold seasoning for an unforgettable taste"
+    ),
+    createDish(
+      congris,
+      "Comfort food with a gourmet twist you’ll keep coming back for"
+    ),
+    createDish(
+      sandwish,
+      "Perfectly balanced taste, made to please every palate."
+    ),
   ];
-  const mainTxt = createMainHeader()
+  const mainTxt = createMainHeader();
 
   const main = createMainContent();
 
-  main.appendChild(mainTxt)
+  main.appendChild(mainTxt);
 
   recipes.forEach((recipe) => {
     main.appendChild(recipe);
@@ -51,8 +63,6 @@ export function addElemText(element, text) {
 export function addElemClass(element, className) {
   return element.classList.add(className);
 }
-
-
 
 function createHeaderContainer() {
   const header = createElem("div");
@@ -80,7 +90,7 @@ function createNav() {
   addElemText(contactBtn, "Contact");
 
   const navContainer = createElem("div");
-  addElemClass(navContainer, "right-btns");
+  addElemClass(navContainer, "nav-container");
   navContainer.append(homeBtn, menuBtn, contactBtn);
 
   return navContainer;
@@ -121,12 +131,13 @@ function createHeaderImg() {
 
 function createMainContent() {
   const main = createElem("div");
-  addElemClass(main, "main-home")
+  addElemClass(main, "main-home");
   return main;
 }
 
 function createMainHeader() {
   const mainTxt = createElem("h2");
-  addElemText(mainTxt, "Main Dishes")
+  addElemText(mainTxt, "Main Dishes");
+  addElemClass(mainTxt, "menu-header");
   return mainTxt;
 }

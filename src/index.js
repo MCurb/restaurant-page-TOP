@@ -4,6 +4,7 @@ import { createHomeContent, navContainer } from "./home";
 import { createMenuContent } from "./menu";
 import { createContactContent } from "./contact";
 
+// INIT
 createHomeContent();
 
 function cleanPage() {

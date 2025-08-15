@@ -1,3 +1,5 @@
+/* CSS Moder Reset */
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -74,10 +76,11 @@ h6 {
   isolation: isolate;
 }
 
+/* LAYOUT */
+
 body {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   align-items: center;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -90,13 +93,13 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr max-content;
   place-items: center;
-  gap: 50px;
+  gap: 48px;
   padding: 20px 0 60px 0;
   color: white;
   background-color: #1f2937;
 }
 
-.header .right-btns {
+.header .nav-container {
   grid-column: 2 / 3;
 }
 
@@ -110,12 +113,16 @@ body {
 }
 
 .header-text {
+  /* Place element */
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   justify-self: end;
+
+  /* Create grid */
   display: grid;
   place-items: start;
-  gap: 8px;
+  gap: 12px;
+
   width: 65%;
 }
 
@@ -132,21 +139,22 @@ body {
   grid-column: 2 / 3;
 }
 
-/* SECTION TWO - Menu */
+/* Home Section Two - Menu */
 
+/* Contaier Layout */
 .main-content,
 .main-home {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 52px;
+  padding-top: 32px;
 }
 
-.main-content h2,
-.main-home h2 {
+.menu-header {
   place-self: center;
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .main-home h2 {
@@ -157,28 +165,34 @@ body {
   grid-column: 1 / 4;
 }
 
-.right-btns {
+.nav-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
+/* Global btn styles */
 button {
+  /* Box Model */
   border: none;
+  border-radius: 4px;
+  padding: 4px 20px;
+
+  /* Typography / Visuals */
   color: #f9faf8;
-  background-color: hsl(216, 5%, 41%);
   font-weight: 700;
   font-size: 18px;
-  padding: 5px 20px;
-  border-radius: 5px;
+  background-color: hsl(216, 5%, 41%);
+
+  /* Miscellaneous / Interactions */
   will-change: transform;
   transform-origin: center center;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  cursor: pointer;
   background-color: hsl(216, 5%, 46%);
+  cursor: pointer;
   transform: scale(1.03);
 }
 
@@ -186,13 +200,12 @@ button:active {
   transform: scale(0.98);
 }
 
-.main-content .right-btns {
+.main-content .nav-container {
   grid-column: 4 / 5;
   justify-self: center;
 }
 
-.main-content > div,
-.main-home > div {
+.recipe {
   width: 232px;
   text-align: center;
   will-change: transform;
@@ -200,38 +213,47 @@ button:active {
   transition: all 0.4s ease;
 }
 
-.main-content > div:hover,
-.main-home > div:hover {
+.recipe:hover {
   transform: scale(1.04);
   cursor: pointer;
 }
 
-.main-content img,
-.main-home img {
+.recipe img {
+  border-radius: 20px;
   width: 220px;
   height: 180px;
   object-fit: cover;
-  border-radius: 20px;
 }
 
-.main-content p,
-.main-home p {
-  margin-top: 5px;
-  margin-bottom: 0;
+.recipe p {
+  margin-top: 8px;
   color: gray;
 }
 
 /* Contact Section */
 
+.contact-container {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
+
 .contact-card-container {
+  /* Grid Layout */
   display: grid;
   gap: 8px;
-  padding: 50px;
+
+  /* Box Model */
+  padding: 52px;
   border-radius: 12px;
+
+  /* Typography / Visuals */
   font-size: 20px;
   font-family: "Edu NSW ACT Hand Cursive", cursive;
-  background-color: #1f2937;
   color: white;
+  background-color: #1f2937;
+
+  /* Miscellaneous / Interactions */
   will-change: transform;
   transform-origin: center center;
   transition: all 0.5s ease;

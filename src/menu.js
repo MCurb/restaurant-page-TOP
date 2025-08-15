@@ -15,14 +15,35 @@ export function createMenuContent() {
   const heroText = createHeroText();
 
   const recipes = [
-    createDish(ajiaco, "A symphony of textures, colors, and irresistible seasoning"),
-    createDish(tradicional, "A burst of flavor in every bite, crafted to satisfy your cravings"),
+    createDish(
+      ajiaco,
+      "A symphony of textures, colors, and irresistible seasoning"
+    ),
+    createDish(
+      tradicional,
+      "A burst of flavor in every bite, crafted to satisfy your cravings"
+    ),
     createDish(yuca, "Rich aromas and vibrant flavors that awaken your senses"),
-    createDish(ropaVieja, "Fresh ingredients meet bold seasoning for an unforgettable taste"),
-    createDish(congris, "Comfort food with a gourmet twist you’ll keep coming back for"),
-    createDish(cubanFood, "Wholesome, hearty, and bursting with flavor in every mouthful"),
-    createDish(churros, "Made with love, served with flavor, and enjoyed with a smile"),
-    createDish(sandwish, "Perfectly balanced taste, made to please every palate."),
+    createDish(
+      ropaVieja,
+      "Fresh ingredients meet bold seasoning for an unforgettable taste"
+    ),
+    createDish(
+      congris,
+      "Comfort food with a gourmet twist you’ll keep coming back for"
+    ),
+    createDish(
+      cubanFood,
+      "Wholesome, hearty, and bursting with flavor in every mouthful"
+    ),
+    createDish(
+      churros,
+      "Made with love, served with flavor, and enjoyed with a smile"
+    ),
+    createDish(
+      sandwish,
+      "Perfectly balanced taste, made to please every palate."
+    ),
   ];
 
   content.append(heroText, navContainer);
@@ -43,6 +64,7 @@ function createContainer() {
 function createHeroText() {
   const heroText = createElem("h2");
   addElemText(heroText, "The Menu");
+  addElemClass(heroText, "menu-header")
   return heroText;
 }
 
@@ -53,6 +75,7 @@ export function createDish(imgUrl, recipe) {
   recipeDescript.textContent = recipe;
 
   const recipeContainer = createElem("div");
+  addElemClass(recipeContainer, "recipe")
   recipeContainer.append(recipeImg, recipeDescript);
 
   return recipeContainer;

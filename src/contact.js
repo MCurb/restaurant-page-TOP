@@ -4,7 +4,15 @@ export function createContactContent() {
   const body = document.querySelector("body");
   const heroText = createHeroText();
   const contactCard = createCard();
-  body.append(heroText, navContainer, contactCard);
+  const container = createContainer();
+  container.append(heroText, navContainer, contactCard)
+  body.appendChild(container);
+}
+
+function createContainer() {
+  const container = createElem("div");
+  addElemClass(container, "contact-container");
+  return container;
 }
 
 function createHeroText() {
